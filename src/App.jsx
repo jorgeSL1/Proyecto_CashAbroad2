@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -12,13 +12,14 @@ import Footer from './components/Footer'
 
 function App() {
   const [isDragging, setIsDragging] = useState(false)
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
-  const constraintsRef = useRef(null)
+  const [isMobile, setIsMobile] = useState(false)
+  const [position, setPosition] = useState({ x: 0, y: 0 })
 
-  useState(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768)
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
   const handleClick = (e) => {
@@ -27,8 +28,21 @@ function App() {
     }
   }
 
+  const handleDragEnd = (event, info) => {
+    setPosition({ x: info.offset.x + position.x, y: info.offset.y + position.y })
+    setTimeout(() => setIsDragging(false), 100)
+  }
+
+  // Límites del viewport para el arrastre
+  const dragConstraints = {
+    top: -window.innerHeight + 100,
+    left: -window.innerWidth + 100,
+    right: 24,
+    bottom: 24,
+  }
+
   return (
-    <div className="min-h-screen bg-white" ref={constraintsRef}>
+    <div className="min-h-screen bg-white">
       <Navbar />
       <Hero />
       <SocialProof />
@@ -39,18 +53,18 @@ function App() {
       <CTA />
       <Footer />
 
-      
+      {/* Botón flotante de WhatsApp */}
       <motion.a
         href="https://wa.me/5491123456789"
         target="_blank"
         rel="noopener noreferrer"
         onClick={handleClick}
         drag={isMobile}
-        dragConstraints={constraintsRef}
-        dragElastic={0.1}
+        dragConstraints={dragConstraints}
+        dragElastic={0.05}
         dragMomentum={false}
         onDragStart={() => setIsDragging(true)}
-        onDragEnd={() => setTimeout(() => setIsDragging(false), 100)}
+        onDragEnd={handleDragEnd}
         whileDrag={{ scale: 1.1 }}
         whileHover={!isMobile ? { scale: 1.1 } : {}}
         whileTap={{ scale: 0.95 }}
@@ -67,10 +81,9 @@ function App() {
         <img
           src="/whatsapp.png"
           alt="WhatsApp"
-          className={`object-contain pointer-events-none ${isMobile ? 'w-8 h-8' : 'w-16 h-16'}`}
+          className={`object-contain pointer-events-none ${isMobile ? 'w-10 h-10' : 'w-16 h-16'}`}
           draggable="false"
         />
-        
         
         {isMobile && (
           <motion.span
