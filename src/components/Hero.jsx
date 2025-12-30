@@ -10,7 +10,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50/50 to-white">
+    <section className="pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#3d5de2]/10 to-white">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -33,12 +33,12 @@ export default function Hero() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Ingresa tu correo de trabajo"
-                className="font-body font-light flex-1 px-4 sm:px-6 py-3 sm:py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-base sm:text-lg"
+                className="font-body font-light flex-1 px-4 sm:px-6 py-3 sm:py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3d5de2] focus:border-transparent text-base sm:text-lg"
                 required
               />
               <motion.button
                 type="submit"
-                className="font-heading font-semibold bg-blue-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-blue-700 transition shadow-lg whitespace-nowrap text-base sm:text-lg"
+                className="font-heading font-semibold bg-[#3d5de2] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-[#3451c7] transition shadow-lg whitespace-nowrap text-base sm:text-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -48,7 +48,7 @@ export default function Hero() {
           </form>
 
           <p className="font-body font-light text-xs sm:text-sm text-gray-500 mb-6 sm:mb-8 px-4">
-            Al registrarme, acepto los <a href="#" className="text-blue-600 hover:underline">Términos de Servicio</a> y la <a href="#" className="text-blue-600 hover:underline">Política de Privacidad</a> de CashAbroad.
+            Al registrarme, acepto los <a href="#" className="text-[#3d5de2] hover:underline">Términos de Servicio</a> y la <a href="#" className="text-[#3d5de2] hover:underline">Política de Privacidad</a> de CashAbroad.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 text-xs sm:text-sm px-4">

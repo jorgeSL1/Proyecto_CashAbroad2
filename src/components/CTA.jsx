@@ -2,10 +2,10 @@ import { motion } from 'framer-motion'
 
 export default function CTA() {
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600 to-indigo-700 relative overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#3d5de2] to-indigo-700 relative overflow-hidden">
       <div className="absolute inset-0 bg-grid-white/10"></div>
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-blue-500 rounded-full blur-3xl opacity-20"></div>
+        <div className="absolute top-0 left-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-[#3d5de2] rounded-full blur-3xl opacity-20"></div>
         <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-indigo-500 rounded-full blur-3xl opacity-20"></div>
       </div>
       
@@ -24,7 +24,7 @@ export default function CTA() {
           </p>
           <motion.a
             href="#signup"
-            className="font-heading font-semibold inline-block bg-white text-blue-600 px-8 sm:px-10 py-4 sm:py-5 rounded-lg text-base sm:text-lg hover:bg-gray-50 transition shadow-2xl"
+            className="font-heading font-semibold inline-block bg-white text-[#3d5de2] px-8 sm:px-10 py-4 sm:py-5 rounded-lg text-base sm:text-lg hover:bg-gray-50 transition shadow-2xl"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

@@ -64,9 +64,9 @@ export default function Features() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl sm:rounded-2xl p-6 sm:p-8 hover:shadow-xl transition-all duration-300 border border-blue-100"
+              className="bg-gradient-to-br from-[#3d5de2]/10 to-indigo-50 rounded-xl sm:rounded-2xl p-6 sm:p-8 hover:shadow-xl transition-all duration-300 border border-[#3d5de2]/20"
             >
-              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-blue-600 text-white rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-[#3d5de2] text-white rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-6">
                 {feature.icon}
               </div>
               <h3 className="font-heading font-semibold text-lg sm:text-xl md:text-2xl text-gray-900 mb-3 sm:mb-4">
