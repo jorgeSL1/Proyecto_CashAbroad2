@@ -24,16 +24,16 @@ export default function FAQ() {
   ]
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12 md:mb-16"
         >
-          <h2 className="font-display font-semibold uppercase text-4xl sm:text-5xl text-gray-900 mb-4">
+          <h2 className="font-display font-semibold uppercase text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-900 mb-4 px-4">
             Preguntas frecuentes
           </h2>
         </motion.div>
@@ -49,11 +49,11 @@ export default function FAQ() {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition"
+                className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 text-left flex items-center justify-between hover:bg-gray-50 transition"
               >
-                <span className="font-heading font-semibold text-xl text-gray-900">{faq.question}</span>
+                <span className="font-heading font-semibold text-base sm:text-lg md:text-xl text-gray-900 pr-4">{faq.question}</span>
                 <svg
-                  className={`w-6 h-6 text-gray-600 transition-transform duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] ${openIndex === index ? 'rotate-180' : 'rotate-0'}`}
+                  className={`w-5 h-5 sm:w-6 sm:h-6 text-gray-600 transition-transform duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] flex-shrink-0 ${openIndex === index ? 'rotate-180' : 'rotate-0'}`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -73,8 +73,8 @@ export default function FAQ() {
                 }}
                 className="overflow-hidden"
               >
-                <div className="px-8 pb-6">
-                  <p className="font-body font-light text-gray-600 text-lg leading-relaxed">{faq.answer}</p>
+                <div className="px-4 sm:px-6 md:px-8 pb-4 sm:pb-5 md:pb-6">
+                  <p className="font-body font-light text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed">{faq.answer}</p>
                 </div>
               </motion.div>
             </motion.div>

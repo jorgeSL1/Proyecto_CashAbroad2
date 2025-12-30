@@ -75,29 +75,29 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-gray-900 text-gray-300 py-16 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-gray-900 text-gray-300 py-10 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-5 gap-12 mb-12">
-          <div className="md:col-span-1">
-            <div className="flex items-center mb-4">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 sm:gap-10 md:gap-12 mb-8 sm:mb-10 md:mb-12">
+          <div className="col-span-2 md:col-span-1">
+            <div className="flex items-center mb-3 sm:mb-4">
               <img 
                 src={logo}
                 alt="CashAbroad" 
-                className="h-20 brightness-0 invert"
+                className="h-16 sm:h-18 md:h-20 brightness-0 invert"
               />
             </div>
-            <p className="font-body font-light text-sm text-gray-400 leading-relaxed">
+            <p className="font-body font-light text-xs sm:text-sm text-gray-400 leading-relaxed">
               Todo lo que necesitas para impulsar tu motor de ventas.
             </p>
           </div>
 
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h3 className="font-heading font-semibold text-white mb-4">{category}</h3>
-              <ul className="space-y-3">
+              <h3 className="font-heading font-semibold text-white mb-3 sm:mb-4 text-sm sm:text-base">{category}</h3>
+              <ul className="space-y-2 sm:space-y-3">
                 {links.map((link) => (
                   <li key={link}>
-                    <a href="#" className="font-body font-light text-sm hover:text-white transition">
+                    <a href="#" className="font-body font-light text-xs sm:text-sm hover:text-white transition block">
                       {link}
                     </a>
                   </li>
@@ -107,19 +107,19 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="border-t border-gray-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="font-label text-sm text-gray-400">
+        <div className="border-t border-gray-800 pt-6 sm:pt-8">
+          <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0 gap-4">
+            <p className="font-label text-xs sm:text-sm text-gray-400 text-center sm:text-left">
               © 2025 CashAbroad. Todos los derechos reservados.
             </p>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center flex-wrap justify-center gap-3 sm:gap-4">
               {socialLinks.map((social) => (
                 <a 
                   key={social.name}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition"
+                  className="text-gray-400 hover:text-white transition p-1"
                   aria-label={social.name}
                 >
                   {social.icon}
