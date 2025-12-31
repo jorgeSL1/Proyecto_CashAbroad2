@@ -33,7 +33,7 @@ function App() {
     setTimeout(() => setIsDragging(false), 100)
   }
 
-  // Límites del viewport para el arrastre
+  
   const dragConstraints = {
     top: -window.innerHeight + 100,
     left: -window.innerWidth + 100,
@@ -53,7 +53,7 @@ function App() {
       <CTA />
       <Footer />
 
-      {/* Botón flotante de WhatsApp */}
+     
       <motion.a
         href="https://wa.me/5491123456789"
         target="_blank"

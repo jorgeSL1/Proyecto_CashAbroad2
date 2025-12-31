@@ -48,7 +48,7 @@ export default function Hero() {
           </form>
 
           <p className="font-body font-light text-xs sm:text-sm text-gray-500 mb-6 sm:mb-8 px-4">
-            Al registrarme, acepto los <a href="#" className="text-[#3d5de2] hover:underline">Términos de Servicio</a> y la <a href="#" className="text-[#3d5de2] hover:underline">Política de Privacidad</a> de CashAbroad.
+            Al registrarme, acepto los <a href="https://www.cashabroad.one/tss" target="_blank" rel="noopener noreferrer" className="text-[#3d5de2] hover:underline">Términos y Condiciones</a> y la <a href="https://www.cashabroad.one/ppm" target="_blank" rel="noopener noreferrer" className="text-[#3d5de2] hover:underline">Política de Privacidad</a> de CashAbroad.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 text-xs sm:text-sm px-4">
