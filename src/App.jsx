@@ -73,7 +73,7 @@ function App() {
           bg-[#25D366] rounded-full shadow-lg hover:shadow-xl 
           transition-shadow duration-300 
           flex items-center justify-center
-          ${isMobile ? 'w-14 h-14 cursor-grab active:cursor-grabbing' : 'w-16 h-16 animate-bounce-slow'}
+          ${isMobile ? 'w-14 h-14 cursor-grab active:cursor-grabbing' : 'w-14 h-14 animate-bounce-slow'}
         `}
         style={{ touchAction: 'none' }}
         aria-label="Contactar por WhatsApp"
