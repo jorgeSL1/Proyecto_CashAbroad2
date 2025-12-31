@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import SocialProof from './components/SocialProof'
 import Features from './components/Features'
 import Testimonial from './components/Testimonial'
 import Integration from './components/Integration'
@@ -45,7 +44,6 @@ function App() {
     <div className="min-h-screen bg-white">
       <Navbar />
       <Hero />
-      <SocialProof />
       <Testimonial />
       <Features />
       <Integration />
