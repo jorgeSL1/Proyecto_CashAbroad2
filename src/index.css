@@ -10,7 +10,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Animación de bounce suave para el botón de WhatsApp */
+
 @keyframes bounce-slow {
   0%, 100% {
     transform: translateY(0);

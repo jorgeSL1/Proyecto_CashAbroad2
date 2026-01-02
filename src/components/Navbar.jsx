@@ -22,26 +22,39 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-8 lg:px-12">
         <div className="flex justify-between items-center h-16 sm:h-20 md:h-24">
       
-          <div className="flex items-center flex-shrink-0">
-            <a href="#" className="flex items-center">
+         
+          <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
+            <a href="#" className="flex items-center flex-shrink-0">
               <img 
                 src={logo}
                 alt="CashAbroad" 
                 className="h-12 sm:h-16 md:h-20 w-auto"
               />
             </a>
+
+            
+            <motion.a
+              href="https://cashabroad-pricing.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-900 hover:text-black px-2 sm:px-4 py-2 font-semibold transition text-sm sm:text-base"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Pricing
+            </motion.a>
           </div>
 
-          
+         
           <div className="hidden md:flex items-center gap-4">
             <motion.a
               href="https://app.cashabroad.one/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-gray-900 px-4 py-2 font-medium transition text-base"
+              className="text-gray-900 hover:text-black px-4 py-2 font-semibold transition text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -90,7 +103,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        
+
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -105,7 +118,7 @@ export default function Navbar() {
                   href="https://app.cashabroad.one/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-gray-900 px-4 py-3 font-medium transition text-base hover:bg-gray-50 rounded-lg"
+                  className="text-gray-900 hover:text-black px-4 py-3 font-semibold transition text-base hover:bg-gray-50 rounded-lg"
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setIsOpen(false)}
                 >
