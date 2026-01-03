@@ -2,26 +2,277 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
-  font-weight: 300;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ==========================================================================
+   BASE LAYER - Estilos fundamentales
+   ========================================================================== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    @apply bg-white text-neutral-900 font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  * {
+    @apply box-border;
+  }
+
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* Tipografía responsive para pantallas pequeñas */
+  @media (max-width: 375px) {
+    html {
+      font-size: 14px;
+    }
+  }
+}
+
+/* ==========================================================================
+   COMPONENTS LAYER - Componentes reutilizables
+   ========================================================================== */
+@layer components {
+  /* ---------- Botones ---------- */
+  .btn-primary {
+    @apply px-4 py-2.5 sm:px-6 sm:py-3 
+           bg-primary-800 text-white font-medium rounded-lg
+           hover:bg-blue-600 transition-all duration-300
+           shadow-soft hover:shadow-elevated 
+           transform hover:-translate-y-0.5
+           text-sm sm:text-base active:scale-95
+           touch-manipulation select-none;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2.5 sm:px-6 sm:py-3 
+           bg-white text-primary-800 font-medium rounded-lg
+           border border-neutral-200 hover:border-primary-800
+           transition-all duration-300 hover:shadow-soft
+           text-sm sm:text-base active:scale-95
+           touch-manipulation select-none;
+  }
+
+  /* ---------- Cards ---------- */
+  .card {
+    @apply bg-white rounded-xl sm:rounded-2xl 
+           shadow-soft border border-neutral-100
+           transition-all duration-300 hover:shadow-card;
+  }
+
+  /* ---------- Títulos de sección ---------- */
+  .section-title {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl 
+           font-semibold text-primary-900 tracking-tight;
+  }
+
+  .section-subtitle {
+    @apply text-sm sm:text-base lg:text-lg 
+           text-neutral-600 font-normal;
+  }
+
+  /* ---------- Safe Areas (iOS notch) ---------- */
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .safe-top {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  .container-safe {
+    @apply px-4 sm:px-6 lg:px-8;
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
+  .fixed-bottom-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  /* ---------- Skeleton Loading ---------- */
+  .skeleton {
+    @apply animate-shimmer;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+  }
+}
+
+/* ==========================================================================
+   UTILITIES LAYER - Utilidades personalizadas
+   ========================================================================== */
+@layer utilities {
+  /* ---------- Animation Delays ---------- */
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  /* ---------- Efectos visuales ---------- */
+  .gradient-text {
+    @apply bg-clip-text text-transparent 
+           bg-gradient-to-r from-primary-800 to-primary-500;
+  }
+
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-md;
+  }
+
+  /* ---------- Mobile-friendly utilities ---------- */
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ---------- Line Clamp ---------- */
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  /* ---------- Selection & Scroll ---------- */
+  .no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .scroll-smooth {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* ---------- Focus Ring (Accesibilidad) ---------- */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 
+           focus:ring-primary-800 focus:ring-offset-2;
+  }
+}
+
+/* ==========================================================================
+   SCROLLBAR STYLES
+   ========================================================================== */
+
+/* Desktop: scrollbar visible y estilizado */
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-neutral-100 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-neutral-300 rounded-full hover:bg-neutral-400;
+  }
+}
+
+/* Mobile: ocultar scrollbar */
+@media (max-width: 767px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  * {
+    scrollbar-width: none;
+  }
 }
 
 
-@keyframes bounce-slow {
-  0%, 100% {
-    transform: translateY(0);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-  }
-  50% {
-    transform: translateY(-10px);
-    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+
+
+input[type="range"] {
+  @apply w-full h-2 bg-neutral-200 rounded-lg appearance-none cursor-pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: theme('colors.primary.800');
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: theme('colors.blue.600');
+  transform: scale(1.1);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 1.25rem;
+  height: 1.25rem;
+  background: theme('colors.primary.800');
+  border-radius: 50%;
+  cursor: pointer;
+  border: 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  background: theme('colors.blue.600');
+  transform: scale(1.1);
+}
+
+
+
+
+@media (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
   }
 }
 
-.animate-bounce-slow {
-  animation: bounce-slow 3s infinite;
+
+@media (max-width: 768px) {
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }

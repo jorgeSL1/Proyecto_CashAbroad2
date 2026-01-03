@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import logo from '/cashabroad-black.png'
 
 export default function Navbar() {
@@ -27,25 +28,24 @@ export default function Navbar() {
       
          
           <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
-            <a href="#" className="flex items-center flex-shrink-0">
-              <img 
+            <Link to="/" className="flex items-center flex-shrink-0">
+              <img
                 src={logo}
-                alt="CashAbroad" 
+                alt="CashAbroad"
                 className="h-12 sm:h-16 md:h-20 w-auto"
               />
-            </a>
+            </Link>
 
-            
-            <motion.a
-              href="https://cashabroad-pricing.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-900 hover:text-black px-2 sm:px-4 py-2 font-semibold transition text-sm sm:text-base"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Calculadora 
-            </motion.a>
+
+            <Link to="/calculadora">
+              <motion.div
+                className="text-gray-900 hover:text-black px-2 sm:px-4 py-2 font-semibold transition text-sm sm:text-base"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Calculadora
+              </motion.div>
+            </Link>
           </div>
 
          
