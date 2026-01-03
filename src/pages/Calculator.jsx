@@ -15,7 +15,7 @@ export default function Calculator() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      {/* Hero Section */}
+      
       <section className="pt-20 sm:pt-24 md:pt-28 pb-6 sm:pb-8 md:pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#eef2ff] to-white">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
@@ -33,12 +33,12 @@ export default function Calculator() {
         </div>
       </section>
 
-      {/* Main Content */}
+   
       <section className="py-6 sm:py-8 md:py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-6 md:gap-8 lg:gap-12">
 
-            {/* Left Column - Quiz */}
+            
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -52,7 +52,7 @@ export default function Calculator() {
               </div>
             </motion.div>
 
-            {/* Right Column - Results */}
+            
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -83,7 +83,7 @@ export default function Calculator() {
 
       <Footer />
 
-      {/* WhatsApp Button */}
+    
       <motion.a
         href="https://wa.me/5580465994"
         target="_blank"

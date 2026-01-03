@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
+import Partners from '../components/Partners'
 import Features from '../components/Features'
 import Testimonial from '../components/Testimonial'
 import Integration from '../components/Integration'
@@ -43,6 +44,7 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       <Navbar />
       <Hero />
+      <Partners />
       <Testimonial />
       <Features />
       <Integration />
